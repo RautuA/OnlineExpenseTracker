@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +35,10 @@ body {
   <div class="col-md-6 offset-md-3">
    <div class="card card-sh">
      <div class="card-header">
-      <p class="text-center fs-3">Register</p>   
+      <p class="text-center fs-3">Sign Up</p>   
       
       <c:if test="${not empty msg}">
-      <p>${msg}</p>
+      <p class= "text-center text-success fs-4">${msg}</p>
       <c:remove var = "msg" />
       </c:if>
       

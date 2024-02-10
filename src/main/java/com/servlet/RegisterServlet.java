@@ -7,12 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import com.dao.UserDao;
 import com.db.HibernateUtil;
 import com.entity.User;
 
-import jakarta.servlet.http.HttpSession;
+
 
 
 @WebServlet("/userRegister")
@@ -41,15 +42,19 @@ public class RegisterServlet extends HttpServlet {
 				UserDao dao=new UserDao(HibernateUtil.getSessionFactory());
 				boolean f = dao.saveuser(u);
 				
-				HttpSession session = (HttpSession) req.getSession();
+				
+				javax.servlet.http.HttpSession session = req.getSession();
+				
 				
 				
 				if(f){
-				    session.setAttribute("msg", "Register successfully");
+				    session.setAttribute("msg", "Registered successfully");
 					//System.out.println("Register successfully");
+				    resp.sendRedirect("register.jsp");
 				}else {
-					session.setAttribute("msg", "Something wrong on server");
+					session.setAttribute("msg", "Your account cannot be created at this time.");
 					//System.out.println("Something wrong on server");
+					resp.sendRedirect("register.jsp");
 				}
 				
 			}
