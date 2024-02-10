@@ -1,4 +1,8 @@
+
+<%@ page import="org.hibernate.SessionFactory" %>
+<%@ page import="com.db.HibernateUtil" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +11,10 @@
 <title>Expense Tracker</title>
 <%@include file="component/all_css.jsp" %>
 
-
+<%
+    SessionFactory factory = HibernateUtil.getSessionFactory();
+    pageContext.setAttribute("sessionFactory", factory);
+%>
 
 </head>
 <body>
