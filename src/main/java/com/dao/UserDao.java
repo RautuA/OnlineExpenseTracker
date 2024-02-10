@@ -6,9 +6,9 @@ import org.hibernate.Transaction;
 import com.entity.User;
 public class UserDao {
 
-	private SessionFactory factory=null;
-	private Session session=null;
-	private Transaction tx=null;
+	private SessionFactory factory = null;
+	private Session session = null;
+	private Transaction tx = null;
 	
 
 	public UserDao(SessionFactory factory) {
@@ -16,23 +16,22 @@ public class UserDao {
 		this.factory = factory;
 	}
 	
-	public boolean saveuser(User user)
-	{
-		
+	public boolean saveuser(User user) {
+	
 		boolean f=false;
 		try {
 			
-			session=factory.openSession();
-			session.beginTransaction();
+			session = factory.openSession();
+			tx = session.beginTransaction();
 			
 			session.save(user);
 			tx.commit();
-			f=true;
+			f = true;
 			
 			
 		} catch (Exception e) {
 		
-			if(tx !=null) {
+			if(tx != null) {
 				f = false;
 				e.printStackTrace();
 			}

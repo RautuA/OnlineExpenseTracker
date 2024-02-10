@@ -37,9 +37,9 @@ public class RegisterServlet extends HttpServlet {
 				//System.out.println(u);
 				
 				UserDao dao=new UserDao(HibernateUtil.getSessionFactory());
-				boolean f=dao.saveuser(u);
-				if(f)
-				{
+				boolean f = dao.saveuser(u);
+				if(f){
+				
 					System.out.println("Register successfully");
 				}else {
 					System.out.println("Something wrong on server");
