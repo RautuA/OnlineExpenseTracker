@@ -4,17 +4,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 <%@include file="component/all_css.jsp" %>
 <style type="text/css">
 .card-sh{
 box-shadow: 0 0 6px 0 rgba(0, 0, 0.3);
 }
+
+
+body {
+    
+    justify-content: center;
+    align-items: center;
+    min-height: 1000px;
+    background-image: url('img/ex9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 </style>
 </head>
 <body class="bg-light">
 
 <%@include file="component/navbar.jsp" %>
+
+
 
 <div class="container p-5">
  <div class="row">

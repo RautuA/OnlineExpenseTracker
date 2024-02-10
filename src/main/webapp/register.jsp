@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Register</title>
 <%@include file="component/all_css.jsp" %>
 <style type="text/css">
 .card-sh{
