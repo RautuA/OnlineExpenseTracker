@@ -35,7 +35,14 @@ body {
   <div class="col-md-6 offset-md-3">
    <div class="card card-sh">
      <div class="card-header">
-      <p class="text-center fs-3">Register</p>      
+      <p class="text-center fs-3">Register</p>   
+      
+      <c:if test="${not empty msg}">
+      <p>${msg}</p>
+      <c:remove var = "msg" />
+      </c:if>
+      
+         
        <div class="card-body">
        
           
