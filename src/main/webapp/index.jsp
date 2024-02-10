@@ -8,10 +8,13 @@
 <%@include file="component/all_css.jsp" %>
 
 
+
 </head>
 <body>
 
 <%@include file="component/navbar.jsp" %>
+
+
 
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
