@@ -10,6 +10,15 @@
 .card-sh{
 box-shadow: 0 0 6px 0 rgba(0, 0, 0.3);
 }
+body {
+    
+    justify-content: center;
+    align-items: center;
+    min-height: 1000px;
+    background-image: url('img/ex9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 </style>
 </head>
 <body class="bg-light">
