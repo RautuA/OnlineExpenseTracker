@@ -12,6 +12,8 @@ import com.dao.UserDao;
 import com.db.HibernateUtil;
 import com.entity.User;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @WebServlet("/userRegister")
 public class RegisterServlet extends HttpServlet {
@@ -38,11 +40,16 @@ public class RegisterServlet extends HttpServlet {
 				
 				UserDao dao=new UserDao(HibernateUtil.getSessionFactory());
 				boolean f = dao.saveuser(u);
-				if(f){
 				
-					System.out.println("Register successfully");
+				HttpSession session = (HttpSession) req.getSession();
+				
+				
+				if(f){
+				    session.setAttribute("msg", "Register successfully");
+					//System.out.println("Register successfully");
 				}else {
-					System.out.println("Something wrong on server");
+					session.setAttribute("msg", "Something wrong on server");
+					//System.out.println("Something wrong on server");
 				}
 				
 			}
