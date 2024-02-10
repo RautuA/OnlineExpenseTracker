@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.UserDao;
+import com.db.HibernateUtil;
 import com.entity.User;
 
 
@@ -32,7 +34,17 @@ public class RegisterServlet extends HttpServlet {
 				
 				User u = new User(fullName, email, password, about);
 				
-				System.out.println(u);
+				//System.out.println(u);
+				
+				UserDao dao=new UserDao(HibernateUtil.getSessionFactory());
+				boolean f=dao.saveuser(u);
+				if(f)
+				{
+					System.out.println("Register successfully");
+				}else {
+					System.out.println("Something wrong on server");
+				}
+				
 			}
 			
 			
