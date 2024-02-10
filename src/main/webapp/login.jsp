@@ -36,7 +36,10 @@ box-shadow: 0 0 6px 0 rgba(0, 0, 0.3);
           <label>Password</label><input type="password"
               name="password" class="form-control">
          </div>
+         <button class="btn btn-dark col-md-12">Login</button>
+         <div class="text-center mt-2">
          
+         Don't have account <a href="register.jsp" class="text-decoration-none"> create one</a>
          
          
          </div>
