@@ -7,12 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.http.HttpSession;
 import com.dao.UserDao;
 import com.db.HibernateUtil;
 import com.entity.User;
 
-@WebServlet("/login")
+@WebServlet("/userLogin")
 public class LoginServlet  extends HttpServlet {
 
 	@Override
@@ -24,8 +24,18 @@ public class LoginServlet  extends HttpServlet {
 		
 		UserDao dao = new UserDao(HibernateUtil.getSessionFactory());
 		User u = dao.login(email, password);
-		System.out.println(u);
+		
+		
+		javax.servlet.http.HttpSession session = req.getSession();
+		
+		if(u == null) 
+		{
+			session.setAttribute("msg", "Invalid Email & Password");
+		}else {
+			resp.sendRedirect("user/home.jsp");
+            
 		
 	}
 
+	}
 }

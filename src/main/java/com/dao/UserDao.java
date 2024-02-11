@@ -52,7 +52,7 @@ public User login(String email, String password) {
   User u = null;
   session = factory.openSession();
   
-  Query q = session.createQuery("from User where email:em and password:ps");
+  Query q = session.createQuery("from User where email=:em and password=:ps");
   
   q.setParameter("em", email);
   q.setParameter("ps", password);
