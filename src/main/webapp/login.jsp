@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,7 +37,14 @@ body {
   <div class="col-md-6 offset-md-3">
    <div class="card card-sh">
      <div class="card-header">
-      <p class="text-center fs-3"></p>      
+      <p class="text-center fs-3"></p>    
+      <c:if test = "${not empty msg}">
+      <p class="text-center text-success fs-4">${msg}</p>
+      <c:remove var="msg" />
+      </c:if>
+      
+      
+        
        <div class="card-body">
        
         <form action="userLogin" method="post">
