@@ -8,13 +8,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.UserDao;
+import com.db.HibernateUtil;
+import com.entity.User;
+
 @WebServlet("/login")
 public class LoginServlet  extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		super.doPost(req, resp);
+		String email = req.getParameter("email");
+		
+		String password = req.getParameter("password");
+		
+		UserDao dao = new UserDao(HibernateUtil.getSessionFactory());
+		User u = dao.login(email, password);
+		System.out.println(u);
+		
 	}
 
 }
