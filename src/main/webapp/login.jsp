@@ -39,7 +39,7 @@ body {
      <div class="card-header">
       <p class="text-center fs-3"></p>    
       <c:if test = "${not empty msg}">
-      <p class="text-center text-success fs-4">${msg}</p>
+      <p class="text-center text-danger fs-4">${msg}</p>
       <c:remove var="msg" />
       </c:if>
       

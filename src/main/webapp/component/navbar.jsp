@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><i class="fas fa-money-check-dollar"></i> Expense Tracker</a>
@@ -18,6 +20,25 @@
         </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      
+      <c:if test="${not empty userLogin }">
+      
+      <li class="nav-item">
+          <a class="nav-link active" 
+             href="login.jsp"><i class="fas fa-sign-in-alt"></i> ${userLogin.fullname }</a>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link active " 
+             href="register.jsp"
+             tabindex="-1" 
+             ><i class="fas fa-user-plus"></i> Logout</a></li>
+      
+      </c:if>
+      
+      <c:if test="${ empty userLogin }">
+      
+      
         <li class="nav-item">
           <a class="nav-link active" 
              href="login.jsp"><i class="fas fa-sign-in-alt"></i> Login</a>
@@ -28,8 +49,11 @@
              href="register.jsp"
              tabindex="-1" 
              ><i class="fas fa-user-plus"></i> Register</a>
+     
         </li>
+        </c:if>
       </ul>
+      
     </div>
   </div>
 </nav>

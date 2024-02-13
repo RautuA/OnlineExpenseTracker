@@ -33,7 +33,7 @@ public class LoginServlet  extends HttpServlet {
 			session.setAttribute("msg", "Invalid Email & Password");
 			resp.sendRedirect("login.jsp");
 		}else {
-			session.setAttribute("loginUser", u);
+			session.setAttribute("userLogin", u);
 			resp.sendRedirect("user/home.jsp");
             
 		
