@@ -21,7 +21,7 @@ This project is an **Online Expense Tracker** designed to help users manage thei
 ### How to Run:
 1. Clone the repository to your local machine:
    ```
-   git clone https://github.com/RautuA/online-expense-tracker.git
+   git clone https://github.com/RautuA/OnlineExpenseTracker.git
    ```
 2. Set up a MySQL database and update the configuration details in the `hibernate.cfg.xml` file (e.g., database URL, username, and password).
 3. Build the project using your preferred IDE or a build tool like **Maven**.
